@@ -1,4 +1,25 @@
 
 .flex {
   display: flex;
+  padding:100px;
+  position: fixed;
+}
+
+#parent-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the height of the parent container to the full height of the screen */
+  flex-direction: column-reverse;
+  /* margin-left: 10px; */
+  flex-wrap: wrap;
+}
+
+#chat-container {
+  overflow-y: auto;
+  margin-bottom: 164px;
+}
+
+.chat-padding {
+  overflow-wrap: anywhere;
+  padding: 0.5rem 2rem;
 }

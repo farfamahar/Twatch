@@ -8,8 +8,15 @@ function App() {
 
   return (
     <div className='flex'>
-      <Webcam />
-      <Chat/>
+      <Webcam 
+      width={815}
+      height={460}
+      />
+      <div id="parent-container">
+      <div id="chat-container">
+        <Chat/>
+      </div>
+      </div>
     </div>
   )
 }
