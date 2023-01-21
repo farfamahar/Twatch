@@ -12,8 +12,8 @@ const videoConstraints = {
 function App() {
 
   return (
-    <div className='flex'>
-      <div>
+    <div className='flex background'>
+      <div className='webcam-container'>
       <Webcam 
       width={815}
       height={460}

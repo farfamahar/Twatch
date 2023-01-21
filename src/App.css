@@ -4,10 +4,15 @@
   padding: 0;
 }
 
+.webcam-container {
+  margin-left: 200px;
+}
+
 
 .flex {
   display: flex;
-  padding:100px;
+  padding-left: 100px;
+  margin-top: 50px;
   position: fixed;
 }
 
@@ -19,7 +24,12 @@
 }
 
 .video{
-  margin-right: 20px;
+  /* margin-right: 20px; */
+}
+
+.background{
+  background-color: #F7F7F8;
+
 }
 
 .chat-font{
@@ -36,6 +46,7 @@
   flex-direction: column-reverse;
   /* margin-left: 10px; */
   flex-wrap: wrap;
+  background-color: white;
 }
 
 #chat-container {
