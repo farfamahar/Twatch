@@ -38,7 +38,7 @@ const Chat: React.FC = () => {
     <div className="fake-twitch-chat" style={{ }} ref={chatContainerRef}>
       {messages.map((message, index) => (
         <div key={index} style={{ overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
-          <div className="chat-padding">
+          <div className="chat-padding chat-font">
            <strong style={{ color : message.color }}>{message.name}: </strong>
           <span>{message.message}</span>
           </div>
