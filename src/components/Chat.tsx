@@ -42,7 +42,11 @@ const Chat: React.FC = () => {
   }, [messages]);
 
   return (
-    <div className="fake-twitch-chat" style={{ }} ref={chatContainerRef}>
+    <div>
+    <div className="chat" style={{ }} ref={chatContainerRef}>
+    <div className='chat-header-container'>
+      <div className='chat-header'>STREAM CHAT </div>
+      </div>
       {messages.map((message, index) => (
         <div key={index} style={{ overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
           <div className="chat-padding chat-font">
@@ -52,6 +56,7 @@ const Chat: React.FC = () => {
           <div ref={chatContainerRef} />
         </div>
       ))}
+    </div>
     </div>
   );
 };

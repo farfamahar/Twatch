@@ -1,7 +1,23 @@
+:root {
+  --color-opac-b-3: rgba(0,0,0,.13);
+  --color-opac-b-2: rgba(0,0,0,.08);
+  --shadow-elevation-1: 0 1px 2px var(--color-opac-b-3),0 0px 2px var(--color-opac-b-2);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.navbar{
+  padding: 25px;
+  display: flex;
+  height: 75px;
+  align-items: center;
+  box-shadow: var(--shadow-elevation-1) !important;
+  position: sticky;
+  z-index: 7;
 }
 
 .webcam-container {
@@ -11,9 +27,29 @@
 
 .flex {
   display: flex;
-  padding-left: 100px;
-  margin-top: 50px;
+  padding-left: 90px;
   position: fixed;
+}
+
+.chat-header-container{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+  height: 50px;
+  width: -webkit-fill-available;
+  align-items: center;
+  background-color: white;
+
+}
+
+.chat-header{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+
+  
 }
 
 .stream-title{
@@ -22,6 +58,10 @@
   line-height: 1.5;
   font-weight: 600;
 
+}
+
+.chat{
+  /* width: 500px; */
 }
 
 .stream-name{
@@ -66,7 +106,7 @@
 
 .chat-padding {
   overflow-wrap: anywhere;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 1.5rem;
 }
 
 .stream-info{
@@ -148,6 +188,13 @@ display:flex
   color: rgba(0,0,0,.7);
   font-family: 'Inter', sans-serif;
   font-weight: 600;
+
+}
+
+.logo{
+  height: 25px;
+  margin-left: 20px;
+  position: fixed;
 
 }
 
