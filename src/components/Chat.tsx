@@ -13,6 +13,7 @@ const Chat: React.FC = () => {
 
   console.log(chatMessages);
 
+  //Controls chat
   useLayoutEffect(() => {
     const addMessage = () => {
       const name = generateRandomName();
