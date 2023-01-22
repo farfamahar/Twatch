@@ -18,9 +18,19 @@
 
 .stream-title{
   font-family: 'Inter', sans-serif;
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1.5;
-  margin-top: 15px;
+  font-weight: 600;
+
+}
+
+.stream-name{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  /* margin-top: 15px; */
+  font-weight: 700;
+
 }
 
 .video{
@@ -57,4 +67,148 @@
 .chat-padding {
   overflow-wrap: anywhere;
   padding: 0.5rem 2rem;
+}
+
+.stream-info{
+  margin-top: 20px;
+display:flex
+}
+
+.info-container{
+  display: flex;
+  transform: translateY(-10%);
+  margin-top: 15px;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 20px;
+  padding-right: 20px;
+
+
+}
+.stream-info-2{
+  margin-left: 15px;
+}
+
+.stream-audience{
+  color: #961411;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right:15px;
+
+
+}
+
+.stream-timer{
+  margin-right: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 0px;
+
+}
+
+.audience-icon{
+  fill: #961411;
+  transform: translateY(-5%);
+  margin-right: 5px;
+}
+
+.animated-numbers{
+  /* transform: translateY(5px); */
+  letter-spacing: -0.2px;
+}
+
+.stats-container{
+  display: flex;
+  margin-right: 10px;
+}
+
+.stream-type{
+  margin-top: 5px;
+  color: #5B17C4;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.tag{
+  background-color: grey;
+  border-radius: 20px;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: none; }
+
+.user-avatar {
+  background: url(https://static-cdn.jtvnw.net/jtv_user_pictures/pago3-profile_image-5e9043daaa93d715-70x70.jpeg) no-repeat center;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0e0e10;
+  cursor: pointer;
+}
+
+.user-avatar::before {
+  content: "";
+  background: linear-gradient(180deg, #9147ff 70%, rgba(255, 255, 255, 0.85));
+  border-radius: 50%;
+  height: 110%;
+  width: 110%;
+  position: absolute;
+  z-index: -1;
+}
+
+.user-avatar:hover::before {
+  animation: avatar-rotate 1s linear infinite;
+}
+.user-avatar::after {
+  content: "LIVE";
+  font-size: 14px;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 700;
+  background: red;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateY(143%);
+}
+
+@keyframes avatar-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.badge{
+  fill: blueviolet;
+  /* transform: translateY(5%); */
+}
+
+.count-animation.count-enter {
+  opacity: 0.01;
+}
+
+.count-animation.count-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.count-animation.count-exit {
+  opacity: 1;
+}
+
+.count-animation.count-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-out;
 }
