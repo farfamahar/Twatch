@@ -125,17 +125,35 @@ display:flex
 }
 
 .stream-type{
-  margin-top: 5px;
+  margin-top: 0px;
   color: #5B17C4;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-weight: 400;
+
+}
+
+.tag-container{
+  margin-top: 10px;
+  display: flex;
+  gap: 4px
+}
+
+.tag{
+  background-color: rgba(0,0,0,.05);
+  border-radius: 20px;
+  width: fit-content;
+  padding: 4px 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,.7);
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 
 }
 
-.tag{
-  background-color: grey;
-  border-radius: 20px;
+.tag:hover{
+  background-color: rgba(0,0,0,.08);
+  cursor: pointer;
 }
 
 a:link { text-decoration: none; }
