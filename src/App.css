@@ -26,13 +26,13 @@
 }
 
 .webcam-container {
-  margin-left: 200px;
+  /* margin-left: 200px; */
 }
 
 
 .flex {
   display: flex;
-  padding-left: 90px;
+  /* padding-left: 90px; */
   position: fixed;
 }
 
@@ -99,11 +99,18 @@
 #parent-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Set the height of the parent container to the full height of the screen */
+  height: 100vh;
   /* flex-direction: column-reverse; */
-  /* margin-left: 10px; */
+  /* margin-right: 50px; */
+  /* padding-left: 50px; */
   flex-wrap: wrap;
   background-color: white;
+  max-width: 350px;
+}
+
+.sidebar{
+  background-color: #EFEFF1;
+  width: 40vh;
 }
 
 #chat-container {
@@ -126,7 +133,8 @@
 
 .stream-info{
   margin-top: 20px;
-display:flex
+display:flex;
+padding-left: 30px;
 }
 
 .info-container{
@@ -137,6 +145,7 @@ display:flex
   width: 100%;
   padding-right: 20px;
   padding-right: 20px;
+
 
 
 }

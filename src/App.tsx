@@ -63,6 +63,7 @@ function App() {
 
   return (
     <div className='flex background'>
+      <div className='sidebar'> </div>
       <div className='webcam-container'>
       <Webcam 
       width={815}
