@@ -4,6 +4,11 @@
   --shadow-elevation-1: 0 1px 2px var(--color-opac-b-3),0 0px 2px var(--color-opac-b-2);
 }
 
+body{
+  background-color: #F7F7F8;
+
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,11 +104,20 @@
 #parent-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Set the height of the parent container to the full height of the screen */
+  height: 75vh; /* Set the height of the parent container to the full height of the screen */
   /* flex-direction: column-reverse; */
   /* margin-left: 10px; */
   flex-wrap: wrap;
   background-color: white;
+}
+
+.chat-input-container{
+  margin-top: 100px;
+  position: fixed;
+  /* align-self: flex-end; */
+  /* margin: 100px; */
+  background-color: red;
+  margin-top: 0px;
 }
 
 #chat-container {
@@ -111,7 +125,7 @@
   flex-direction: column;
 
   overflow-y: auto;
-  margin-bottom: 164px;
+  /* margin-bottom: 164px; */
 }
 
 .chat-padding {

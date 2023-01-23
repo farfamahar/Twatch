@@ -112,7 +112,11 @@ function App() {
       </div>
           <Chat/>
         </div>
+        <div className='chat-input-container'>
+          <input />
+      </div>
         </div>
+
     </div>
   )
 }
