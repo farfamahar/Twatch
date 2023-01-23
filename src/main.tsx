@@ -5,8 +5,8 @@ import NavBar from './components/NavBar';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <div>
     <NavBar/>
     <App />
-  </React.StrictMode>,
+  </div>
 )

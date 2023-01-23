@@ -107,6 +107,9 @@ function App() {
       </div>
         <div id="parent-container">
         <div id="chat-container">
+          <div className='chat-header-container'>
+      <div className='chat-header'>STREAM CHAT </div>
+      </div>
           <Chat/>
         </div>
         </div>

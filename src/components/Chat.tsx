@@ -11,8 +11,6 @@ const Chat: React.FC = () => {
     chatContainerRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  console.log(chatMessages);
-
   //Controls chat
   useLayoutEffect(() => {
     const addMessage = () => {
@@ -22,7 +20,6 @@ const Chat: React.FC = () => {
         return chatMessages[keys[ keys.length * Math.random() << 0]];
     };
     let item = randomProperty(chatMessages);
-    console.log(randomProperty);
       const message = item[Math.floor(Math.random() * item.length)]
       const color = generateRandomColor();
       setMessages((prevMessages) => [...prevMessages, { name, message, color }]);
@@ -44,10 +41,10 @@ const Chat: React.FC = () => {
 
   return (
     <div>
-    <div className="chat" style={{ }} ref={chatContainerRef}>
-    <div className='chat-header-container'>
+      {/* <div className='chat-header-container'>
       <div className='chat-header'>STREAM CHAT </div>
-      </div>
+      </div> */}
+    <div className="chat" style={{ }} ref={chatContainerRef}>
       {messages.map((message, index) => (
         <div key={index} style={{ overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
           <div className="chat-padding chat-font">
