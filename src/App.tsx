@@ -41,7 +41,7 @@ function App() {
     <div>
       {!isToggled &&
       <div  className='center-div'>
-        <img className="sign-up-logo" src={"src/assets/twatch-logo.png"} alt="Logo" />
+        <img className="sign-up-logo" src={"/Images/twatch-logo.png"} alt="Logo" />
         <div className='form__group field'>
         <input className='form__field' type="text" value={streamName} onChange={handleStreamNameChange} />
           <label id="title" placeholder="Stream Title" htmlFor="title" className='form__label' >Stream Title:</label>
