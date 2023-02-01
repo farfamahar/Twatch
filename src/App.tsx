@@ -13,8 +13,10 @@ const videoConstraints = {
 
 function App() {
 
-  const [streamName,setStreamName] = useState("Stream Name");
-  const [streamUser,setStreamUser] = useState("Name");
+  const [streamName,setStreamName] = useState("");
+  const [streamUser,setStreamUser] = useState("");
+  const [isToggled, setIsToggled] = useState(false);
+
 
   const handleStreamNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStreamName(event.target.value);
@@ -25,15 +27,22 @@ function App() {
   };
 
   return (
-    <div className='flex background'>
-      <div>
-        <label>Stream Title:</label>
-        <input type="text" value={streamName} onChange={handleStreamNameChange} />
+    <div>
+      {!isToggled &&
+      <div className='center-div'>
+        <div className='form__group field'>
+        <input className='form__field' type="text" value={streamName} onChange={handleStreamNameChange} />
+          <label id="title" placeholder="Stream Title" htmlFor="title" className='form__label' >Stream Title:</label>
+        </div>
+        <div className='form__group field'>
+          <input  className='form__field' type="text" value={streamUser} onChange={handleStreamUserChange} />
+          <label id="name" htmlFor="name" className='form__label'>Streamer Name:</label>
+        </div>
+        <button className="start-button" role="button" onClick={() => setIsToggled(!isToggled)}  > <span className="text">Start Stream</span> </button>
+
       </div>
-      <div>
-        <label>Streamer Name:</label>
-        <input type="text" value={streamUser} onChange={handleStreamUserChange} />
-      </div>
+      }
+    {isToggled && <div className='flex background'>
       <div className='webcam-container'>
         <Webcam 
         width={815}
@@ -47,6 +56,7 @@ function App() {
         />
       </div>
     <Chat/>
+    </div>}
     </div>
   )
 }
