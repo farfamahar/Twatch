@@ -40,6 +40,11 @@ const Chat: React.FC = () => {
   }, [messages]);
 
   return (
+    <div id="parent-container">
+        <div id="chat-container">
+          <div className='chat-header-container'>
+      <div className='chat-header'>STREAM CHAT </div>
+      </div>
     <div>
       {/* <div className='chat-header-container'>
       <div className='chat-header'>STREAM CHAT </div>
@@ -54,6 +59,8 @@ const Chat: React.FC = () => {
           <div ref={chatContainerRef} />
         </div>
       ))}
+    </div>
+    </div>
     </div>
     </div>
   );
