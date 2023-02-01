@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 import './App.css'
 import Webcam from "react-webcam";
 import Chat from './components/Chat';
 import StreamInfo from "./components/StreamInfo";
-import AnimatedNumbers from "react-animated-numbers";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import NavBar from './components/NavBar';
+
 
 const videoConstraints = {
   width: 1280,
@@ -12,6 +15,14 @@ const videoConstraints = {
 };
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 300,
+      easing: 'ease-out-cubic',      
+    });
+  });
 
   const [streamName,setStreamName] = useState("");
   const [streamUser,setStreamUser] = useState("");
@@ -29,7 +40,8 @@ function App() {
   return (
     <div>
       {!isToggled &&
-      <div className='center-div'>
+      <div  className='center-div'>
+        <img className="sign-up-logo" src={"src/assets/twatch-logo.png"} alt="Logo" />
         <div className='form__group field'>
         <input className='form__field' type="text" value={streamName} onChange={handleStreamNameChange} />
           <label id="title" placeholder="Stream Title" htmlFor="title" className='form__label' >Stream Title:</label>
@@ -42,20 +54,24 @@ function App() {
 
       </div>
       }
-    {isToggled && <div className='flex background'>
-      <div className='webcam-container'>
-        <Webcam 
-        width={815}
-        height={460}
-        videoConstraints={videoConstraints}
-        className="video"
-        />
-        <StreamInfo 
-          streamName={streamName}
-          streamUser={streamUser}  
-        />
-      </div>
-    <Chat/>
+    {isToggled && 
+  <div> 
+    <NavBar/>
+      <div className='flex background'>
+        <div className='webcam-container'>
+          <Webcam 
+          width={815}
+          height={460}
+          videoConstraints={videoConstraints}
+          className="video"
+          />
+          <StreamInfo 
+            streamName={streamName}
+            streamUser={streamUser}  
+          />
+        </div>
+      <Chat/>
+      </div> 
     </div>}
     </div>
   )

@@ -325,7 +325,11 @@ a:active { text-decoration: none; }
 
 }
 
-/* CSS */
+.sign-up-logo{
+  width: 300px;
+  padding-bottom: 100px;
+}
+
 .start-button {
   margin-top: 50px;
   align-items: center;
@@ -336,7 +340,7 @@ a:active { text-decoration: none; }
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: Phantomsans, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   justify-content: center;
   line-height: 1em;
