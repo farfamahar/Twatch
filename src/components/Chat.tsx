@@ -43,25 +43,22 @@ const Chat: React.FC = () => {
     <div id="parent-container">
         <div id="chat-container">
           <div className='chat-header-container'>
-      <div className='chat-header'>STREAM CHAT </div>
-      </div>
-    <div>
-      {/* <div className='chat-header-container'>
-      <div className='chat-header'>STREAM CHAT </div>
-      </div> */}
-    <div className="chat" style={{ }} ref={chatContainerRef}>
-      {messages.map((message, index) => (
-        <div key={index} style={{ overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
-          <div className="chat-padding chat-font">
-           <strong style={{ color : message.color }}>{message.name}: </strong>
-          <span>{message.message}</span>
+            <div className='chat-header'>STREAM CHAT </div>
           </div>
-          <div ref={chatContainerRef} />
+          <div>
+            <div className="chat" style={{ }} ref={chatContainerRef}>
+            {messages.map((message, index) => (
+              <div key={index} style={{ overflow: 'auto', display: 'flex', flexDirection: 'column'}}>
+                <div className="chat-padding chat-font">
+                  <strong style={{ color : message.color }}>{message.name}: </strong>
+                <span>{message.message}</span>
+              </div>
+              <div ref={chatContainerRef} />
+              </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-    </div>
-    </div>
     </div>
   );
 };

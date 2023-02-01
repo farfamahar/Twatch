@@ -13,20 +13,40 @@ const videoConstraints = {
 
 function App() {
 
+  const [streamName,setStreamName] = useState("Stream Name");
+  const [streamUser,setStreamUser] = useState("Name");
+
+  const handleStreamNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStreamName(event.target.value);
+  };
+
+  const handleStreamUserChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStreamUser(event.target.value);
+  };
+
   return (
     <div className='flex background'>
-     
-      <div className='webcam-container'>
-      <Webcam 
-      width={815}
-      height={460}
-      videoConstraints={videoConstraints}
-      className="video"
-      />
-      <StreamInfo/>
+      <div>
+        <label>Stream Title:</label>
+        <input type="text" value={streamName} onChange={handleStreamNameChange} />
       </div>
-      <Chat/>
-
+      <div>
+        <label>Streamer Name:</label>
+        <input type="text" value={streamUser} onChange={handleStreamUserChange} />
+      </div>
+      <div className='webcam-container'>
+        <Webcam 
+        width={815}
+        height={460}
+        videoConstraints={videoConstraints}
+        className="video"
+        />
+        <StreamInfo 
+          streamName={streamName}
+          streamUser={streamUser}  
+        />
+      </div>
+    <Chat/>
     </div>
   )
 }
