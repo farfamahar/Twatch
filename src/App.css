@@ -25,6 +25,15 @@
   z-index: 7;
 }
 
+.center-div {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .webcam-container {
   /* margin-left: 200px; */
 }
@@ -33,7 +42,8 @@
 .flex {
   display: flex;
   /* padding-left: 90px; */
-  position: fixed;
+  /* position: fixed; */
+  justify-content: center;
 }
 
 .chat-header-container{
@@ -41,11 +51,13 @@
   justify-content: center;
   position: fixed;
   border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+  border-right: 1px solid rgba(0, 0, 0, 0.103);;
   height: 50px;
   width: -webkit-fill-available;
   align-items: center;
   background-color: white;
   margin-bottom: 50px;
+  max-width: 350px;
 
 }
 
@@ -109,16 +121,19 @@
 }
 
 .sidebar{
+  display: flex;
+  padding-left: 30px;
+  flex-direction: column;
   background-color: #EFEFF1;
   width: 40vh;
-}
+justify-content: space-around;}
 
 #chat-container {
   display: flex;
   flex-direction: column;
-
   overflow-y: auto;
   margin-bottom: 164px;
+  border-right: 1px solid rgba(0, 0, 0, 0.103);
 }
 
 .chat-padding {
@@ -233,7 +248,7 @@ a:hover { text-decoration: underline; }
 a:active { text-decoration: none; }
 
 .user-avatar {
-  background: url(https://static-cdn.jtvnw.net/jtv_user_pictures/pago3-profile_image-5e9043daaa93d715-70x70.jpeg) no-repeat center;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541) no-repeat center;
   height: 75px;
   width: 75px;
   border-radius: 50%;
@@ -300,4 +315,135 @@ a:active { text-decoration: none; }
 .count-animation.count-exit-active {
   opacity: 0.01;
   transition: opacity 500ms ease-out;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 20%;
+
+}
+
+.sign-up-logo{
+  width: 300px;
+  padding-bottom: 100px;
+}
+
+.start-button {
+  margin-top: 50px;
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.start-button:active,
+.start-button:hover {
+  outline: 0;
+}
+
+.start-button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.start-button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .start-button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+
+button:active,
+button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.form__field {
+  font-family: 'Inter', sans-serif;  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.0rem;
+  color: rgb(0, 0, 0);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 1s;
+  margin-top: 10px;
+
+
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  font-family: 'Inter', sans-serif;
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #6144A7, #41C6CA);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
 }
