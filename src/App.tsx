@@ -1,12 +1,13 @@
 import { useState, useEffect} from 'react'
-import './App.css'
 import Webcam from "react-webcam";
 import Chat from './components/Chat';
 import StreamInfo from "./components/StreamInfo";
-import 'aos/dist/aos.css';
 import AOS from 'aos';
 import NavBar from './components/NavBar';
-
+import Logo from './components/Logo';
+import SetupForm from './components/SetupForm';
+import 'aos/dist/aos.css';
+import './App.css'
 
 const videoConstraints = {
   width: 1280,
@@ -28,34 +29,18 @@ function App() {
   const [streamUser,setStreamUser] = useState("");
   const [isToggled, setIsToggled] = useState(false);
 
-
-  const handleStreamNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStreamName(event.target.value);
-  };
-
-  const handleStreamUserChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStreamUser(event.target.value);
-  };
-
   return (
-    <div>
+    <>
       {!isToggled &&
-      <div  className='center-div'>
-        <img className="sign-up-logo" src={"/Images/twatch-logo.png"} alt="Logo" />
-        <div className='form__group field'>
-        <input className='form__field' type="text" value={streamName} onChange={handleStreamNameChange} />
-          <label id="title" placeholder="Stream Title" htmlFor="title" className='form__label' >Stream Title:</label>
-        </div>
-        <div className='form__group field'>
-          <input  className='form__field' type="text" value={streamUser} onChange={handleStreamUserChange} />
-          <label id="name" htmlFor="name" className='form__label'>Streamer Name:</label>
-        </div>
-        <button className="start-button" role="button" onClick={() => setIsToggled(!isToggled)}  > <span className="text">Start Stream</span> </button>
-
-      </div>
+      <SetupForm
+        setStreamName={setStreamName}
+        setStreamUser={setStreamUser}
+        isToggled={isToggled}
+        setIsToggled={setIsToggled}
+      />
       }
     {isToggled && 
-  <div> 
+  <> 
     <NavBar/>
       <div className='flex background'>
         <div className='webcam-container'>
@@ -72,8 +57,8 @@ function App() {
         </div>
       <Chat/>
       </div> 
-    </div>}
-    </div>
+    </>}
+    </>
   )
 }
 
