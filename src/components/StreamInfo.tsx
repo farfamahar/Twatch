@@ -1,6 +1,9 @@
 import React, { useState, useLayoutEffect, useRef, useEffect } from 'react';
 // import AnimatedNumbers from "react-animated-numbers";
 import Dispatch from 'react'
+import Tags from './Tags';
+import Timer from './Timer';
+
 
 interface Props{
   streamName:String
@@ -19,34 +22,6 @@ const StreamInfo: React.FC<Props> = ({streamName, streamUser}) => {
   //   return () => clearInterval(intervalId);
   // }, []);
 
-  interface Timer {
-    hours: number;
-    minutes: number;
-    seconds: number;
-  }
-
-  const [timer, setTimer] = useState<Timer>({ hours: 0, minutes: 0, seconds: 0 });
-  const [ticker, setTicker] = useState(0);
-
-  //Timer
-  useEffect(() => {
-    const intervalId3 = setInterval(() => {
-      setTimer(prevTimer => {
-        const newTimer = { ...prevTimer };
-        newTimer.seconds++;
-        if (newTimer.seconds === 60) {
-          newTimer.seconds = 0;
-          newTimer.minutes++;
-        }
-        if (newTimer.minutes === 60) {
-          newTimer.minutes = 0;
-          newTimer.hours++;
-        }
-        return newTimer;
-      });
-    }, 1000);
-    return () => clearInterval(intervalId3);
-  }, []);
 
   //Slow audience number increases
   //TODO: Have audience number increases happen in phases (from small community to out of control numbers)
@@ -69,12 +44,7 @@ const StreamInfo: React.FC<Props> = ({streamName, streamUser}) => {
                     <p className='stream-type'> 
                         <a  href=""> Just Chatting </a> 
                     </p>
-                    <div className='tag-container'>
-                        <p className='tag'> Talking </p>
-                        <p className='tag'> Fun </p>
-                        <p className='tag'> English </p>
-                        <p className='tag'> Reaction </p>
-                    </div>
+                    <Tags/>
                 </div>
                 <div className='stats-container'>
                     <p> 
@@ -91,9 +61,7 @@ const StreamInfo: React.FC<Props> = ({streamName, streamUser}) => {
                         ></AnimatedNumbers> */}
                         {num}
                     </p>
-                    <div className='stream-timer'>
-                        {timer.hours}:{timer.minutes}:{timer.seconds}
-                    </div>
+                    <Timer/>
                 </div>
             </div>
         </div>
