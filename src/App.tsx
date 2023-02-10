@@ -6,6 +6,7 @@ import StreamInfo from "./components/StreamInfo";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import NavBar from './components/NavBar';
+import Logo from './components/Logo';
 
 
 const videoConstraints = {
@@ -41,7 +42,7 @@ function App() {
     <div>
       {!isToggled &&
       <div  className='center-div'>
-        <img className="sign-up-logo" src={"/Images/twatch-logo.png"} alt="Logo" />
+        <Logo/>
         <div className='form__group field'>
         <input className='form__field' type="text" value={streamName} onChange={handleStreamNameChange} />
           <label id="title" placeholder="Stream Title" htmlFor="title" className='form__label' >Stream Title:</label>
